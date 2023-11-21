@@ -271,6 +271,11 @@ li.active img {
   cursor: pointer;
 }
 
+.filter button:hover {
+  border: 1px solid #3B38A3;
+  background-color: #312E8C;
+}
+
 .filter button.active {
   border-radius: 32px 32px 0px 0px;
 }
@@ -334,4 +339,88 @@ li.active img {
   text-transform: uppercase;
   justify-content: center;
   font-size: 10px;
+}
+
+/*  FairyCard */
+
+.fairy-card {
+  display: flex;
+  width: 574px;
+  height: 350px;
+  border-radius: 50px;
+  background-color: #fff;
+  margin-bottom: 30px;
+}
+
+.fairy-card:hover{
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(1.1);
+  box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.fairy-left-image {
+  width: 272px;
+  height: 100%;
+}
+
+.fairy-right p{
+  width: 250px;
+}
+
+.fairy-right {
+  padding: 25px;
+  position: relative;
+}
+
+.fairy-right span {
+  leading-trim: both;
+  text-edge: cap;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: lowercase;
+  margin-bottom: 20px;
+}
+
+.fairy-right h2 {
+  color: #000;
+  leading-trim: both;
+  text-edge: cap;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+
+.fairy-right p {
+  color: #000;
+  leading-trim: both;
+  text-edge: cap;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: lowercase;
+}
+
+.fairy-card-button {
+  position: absolute;
+  bottom: 26px;
+  width: 140px;
+}
+
+.fairy-card-button button{
+  width: 140px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 50px;
+  border: none;
+  background-color: #3B38A3;
+  color: #fff;
+  cursor: pointer;
 }

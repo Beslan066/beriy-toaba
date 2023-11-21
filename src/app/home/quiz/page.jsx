@@ -1,40 +1,46 @@
 import QuizCard from '@/app/components/QuizCard';
 import '../../../app/globals.css';
 
+import Filter from '@/app/components/Filter';
+
 let quiz = [
     {
-        name: '',
-        image: ''
+        name: 'Химический карнавал',
+        image: '/img/cards/quiz/1.png',
+        background: '#B22752' 
+
     },
     {
-        name: '',
-        image: ''
+        name: 'Биологическое приключение',
+        image: '/img/cards/quiz/2.png',
+        background: '#8A593C'
     },
     {
-        name: '',
-        image: ''
+        name: 'Физика веселых открытий',
+        image: '/img/cards/quiz/3.png',
+        background: '#B55733'
     },
     {
-        name: '',
-        image: ''
+        name: 'Звездные приключения',
+        image: '/img/cards/quiz/4.png',
+        background: '#E0583F'
     },
     {
-        name: '',
-        image: ''
+        name: 'Путешествие по миру',
+        image: '/img/cards/quiz/5.png',
+        background: '#A6434F'
     },
     {
-        name: '',
-        image: ''
+        name: 'С заботой о природе',
+        image: '/img/cards/quiz/6.png',
+        background: '#0A5656'
     },
     {
-        name: '',
-        image: ''
-    },
-    {
-        name: '',
-        image: ''
-    },
-    
+        name: 'Приключение по миру экологии',
+        image: '/img/cards/quiz/7.png',
+        background: '#4A4817'
+    }
+
 ]
 
 export default function QuizPage() {
@@ -43,87 +49,13 @@ export default function QuizPage() {
         <div className="container quiz-container">
 
             <div className="filter-bar">
-                <div className="filter">
-                    <button><img src="img/icons/filter.svg" alt=""/><span>Фильтр</span></button>
-                    <div className="filter-items">
-                        <ul>
-                            <li>Астрономия</li>
-                            <li>Биология</li>
-                            <li>География</li>
-                            <li>Физика</li>
-                            <li>Химия</li>
-                            <li>История</li>
-                        </ul>
-                    </div>
-                </div>
-                
+                <Filter />
             </div>
             
             <div className="cards">    
-                <div className="card">
-                    <div className="quiz-title" >
-                        <h3>Химический карнавал</h3>
-                    </div>
-                    <div className="quiz-button">
-                        <button>Пройти</button>
-                    </div>
-                </div>
-
-                <div className="card">
-                    <div className="quiz-title">
-                        <h3>Биологическое приключение</h3>
-                    </div>
-                    <div className="quiz-button">
-                        <button>Пройти</button>
-                    </div>
-                </div>
-
-                <div className="card">
-                    <div className="quiz-title">
-                        <h3>Физика веселых открытий</h3>
-                    </div>
-                    <div className="quiz-button">
-                        <button>Пройти</button>
-                    </div>
-                </div>
-
-                <div className="card">
-                    <div className="quiz-title">
-                        <h3>Звездные приключения</h3>
-                    </div>
-
-                    <div className="quiz-button">
-                        <button>Пройти</button>
-                    </div>
-                </div>
-
-                <div className="card">
-                    <div className="quiz-title">
-                        <h3>Путешествие по миру</h3>
-                    </div>
-                    <div className="quiz-button">
-                        <button>Пройти</button>
-                    </div>
-                    
-                </div>
-
-                <div className="card">
-                    <div className="quiz-title">
-                        <h3>С заботой о природе</h3>
-                    </div>
-                    <div className="quiz-button">
-                        <button>Пройти</button>
-                    </div>
-                </div>
-
-                <div className="card">
-                    <div className="quiz-title">
-                        <h3>Приключение по миру экологии</h3>
-                    </div>
-                    <div className="quiz-button">
-                        <button>Пройти</button>
-                    </div>
-                </div>
+            {quiz.map(quiz => (
+            <QuizCard key={quiz.id} name={quiz.name} image={quiz.image} background={quiz.background}/>
+          ))}
             </div>
 
         </div>
