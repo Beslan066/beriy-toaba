@@ -43,13 +43,50 @@ let quiz = [
 
 ]
 
+let filterItems = [
+    {
+        id: 1,
+        title: 'Астрономия'
+    },
+    {
+        id: 2,
+        title: 'Биология'
+    },
+    {
+        id: 3,
+        title: 'География'
+    },
+    {
+        id: 4,
+        title: 'Физика'
+    },
+    {
+        id: 5,
+        title: 'Экология'
+    },
+    {
+        id: 6,
+        title: 'Химия'
+    },
+
+]
+
 export default function QuizPage() {
     return (
         <section className="main-content">
         <div className="container quiz-container">
 
             <div className="filter-bar">
-                <Filter />
+                
+            <Filter>
+            <ul>
+              {filterItems.map((item, id) => (
+                <li key={id}>{item.title}</li>
+              ))}
+            </ul>    
+          </Filter>
+                
+                
             </div>
             
             <div className="cards">    

@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import React from 'react';
 
@@ -16,7 +18,7 @@ const links = [
     {
         title: 'Дошколятам',
         image: '/img/icons/pre-school.svg',
-        action: ''
+        action: '/home/preschool'
     },
     {
         title: 'Книги',
@@ -26,7 +28,7 @@ const links = [
     {
         title: 'Сказки',
         image: '/img/icons/moon-stars.svg',
-        action: ''
+        action: '/home/fairy'
     },
     {
         title: 'Мультфильмы',
@@ -47,6 +49,9 @@ const links = [
 ]
 
 export default function LeftBar() {
+
+    const [activeItem, setActiveItem] = React.useState()
+
     return (
         <section className="left-bar">
                 <header className="logo">
@@ -55,46 +60,15 @@ export default function LeftBar() {
 
                 <section className="bar-list">
                     <ul>
-                        <Link href='/'>
-                        <li className="active">
-                            <img src="/img/icons/knowlwdge.svg" alt=""/>
-                            <span>База знаний</span>
-                        </li>
-                        </Link>
-        
-                        <Link href="/home/quiz">
-                            <li>
-                                <img src="/img/icons/quiz.svg" alt=""/>
-                                <span>Викторины</span>
-                            </li>
-                        </Link>
-
-                        <li>
-                            <img src="/img/icons/pre-school.svg" alt=""/>
-                            <span>Дошколятам</span>
-                        </li>
-                        <li>
-                            <img src="/img/icons/book.svg" alt=""/>
-                            <span>Книги</span>
-                        </li>
-                        <Link href="/home/fairy">
-                            <li>
-                                <img src="/img/icons/moon-stars.svg" alt=""/>
-                                <span>Сказки</span>
-                            </li>
-                        </Link>
-                        <li>
-                            <img src="/img/icons/multfilm.svg" alt=""/>
-                            <span>Мультфильмы</span>
-                        </li>
-                        <li>
-                            <img src="/img/icons/events.svg" alt=""/>
-                            <span>Мероприятия</span>
-                        </li>
-                        <li>
-                            <img src="/img/icons/game.svg" alt=""/>
-                            <span>Игровой раздел</span>
-                        </li>
+                        {links.map(link => (
+                            <Link href={link.action}>
+                                <li className="">
+                                    <img src={link.image} alt=""/>
+                                    <span>{link.title}</span>
+                                </li>
+                            </Link>
+                        ))}
+                        
                     </ul>
                 </section>
 

@@ -2,6 +2,7 @@ import '../app/globals.css';
 
 import LeftBar from './components/LeftBar';
 
+
 export const metadata = {
   title: 'Берий Тоаба',
   description: 'Группа компаний Тоаба',
@@ -13,12 +14,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
  return (
     <html lang="ru">
-      <body>
-        <div className="app">
+      <body> 
+          <div className="app">
             <LeftBar />
-
             {children}
-        </div>
+          </div>
       </body>
     </html>
   )

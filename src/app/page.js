@@ -1,4 +1,9 @@
+'use client'
+
+import React from 'react';
 import Card from './components/Card';
+import ModalWindow from './components/modalWindow';
+
 import '../app/globals.css';
 
 
@@ -37,8 +42,16 @@ let cards = [
 ]
 
 export default function Home() {
+
+  const [disabled, setEnable] = React.useState(true);
+
+    const setShow = () => {
+        setEnable(!disabled);
+    }
   return (
+    
     <section className="main-content">
+      <ModalWindow className={disabled ? 'disabled': null}/>
             <div className="container knowledge-container">
         <div className="main-banner">
             <div className="banner-header">
@@ -46,9 +59,11 @@ export default function Home() {
             </div>
             <div className="banner-figures">
                 <img src="/img/banner-eclipse.svg" alt=""/>
-                <button>Подробнее</button>
+                <button className={disabled ? 'disabled': null} 
+                onClick={setShow}>Подробнее</button>
             </div>
         </div>
+        
 
         <div className="cards">
           {cards.map(card => (
