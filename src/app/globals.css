@@ -477,7 +477,7 @@ li.active img {
   
 }
 
-.modal {
+.modal-wrapper {
   width: 1446px;
   height: 904px;
   flex-shrink: 0;
@@ -488,7 +488,7 @@ li.active img {
   flex-direction: column;
   padding: 46px 80px;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .modal.disabled {
@@ -566,4 +566,8 @@ li.active img {
 
 .modal-content-images img:first-child {
   margin-right: 20px;
+}
+
+.disabled {
+  display: none;
 }

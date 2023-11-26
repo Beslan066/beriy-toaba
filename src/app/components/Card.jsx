@@ -2,7 +2,7 @@
 
 import React from "react"
 
-export default function Card({ name, image, }) {
+export default function Card({ name, image, stateValue}) {
 
     const [disabled, setEnable] = React.useState(true)
 
@@ -17,8 +17,7 @@ export default function Card({ name, image, }) {
                     <img src={image} alt={name}/>
                 </div>
                 <div className="card-button">
-                    <button className={disabled ? 'disabled': null} 
-                        onClick={setModal}>
+                    <button onClick={stateValue}>
                         <span>Изучить</span>
                         <img src="/img/Arrow.svg" alt=""/>
                     </button>

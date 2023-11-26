@@ -4,13 +4,13 @@ import React from "react"
 
 
 
-export default function ModalWindow() {
+export default function ModalWindow({stateValue}) {
 
     
 
     return (
         
-            <div className='modal'>
+            <div className='modal-wrapper'>
                 <div className="modal-head">
                     <div className="modal-step-counter">
                         <span className="lesson">Урок</span> <span className="modal-step">1</span>
@@ -22,7 +22,7 @@ export default function ModalWindow() {
                     </div>
 
                     <div className="modal-close-btn">
-                        <button><img src="/img/close.svg" alt="" /></button>
+                        <button onClick={stateValue}><img src="/img/close.svg" alt="" /></button>
                     </div>
                 </div>
 

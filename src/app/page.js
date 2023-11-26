@@ -43,34 +43,45 @@ let cards = [
 
 export default function Home() {
 
-  const [disabled, setEnable] = React.useState(true);
+  const [showModal, setShowModal] = React.useState(false);
 
-    const setShow = () => {
-        setEnable(!disabled);
-    }
+  const setShow = () => {
+    setShowModal(!showModal);
+  };
+
   return (
-    
     <section className="main-content">
-      <ModalWindow className={disabled ? 'disabled': null}/>
-            <div className="container knowledge-container">
-        <div className="main-banner">
-            <div className="banner-header">
-                <h2>Образовательный проект ”Берий Тоаба”</h2>
-            </div>
-            <div className="banner-figures">
-                <img src="/img/banner-eclipse.svg" alt=""/>
-                <button className={disabled ? 'disabled': null} 
-                onClick={setShow}>Подробнее</button>
-            </div>
+      <div className={showModal ? null : "disabled"}>
+        <ModalWindow stateValue={setShow}/>
+      </div>
+
+      {showModal ? null : (
+        <div className="container knowledge-container">
+          <div className="main-banner">
+          <div className="banner-header">
+            <h2>Образовательный проект ”Берий Тоаба”</h2>
+          </div>
+          <div className="banner-figures">
+            <img src="/img/banner-eclipse.svg" alt="" />
+            <button>Подробнее</button>
+          </div>
         </div>
-        
 
         <div className="cards">
-          {cards.map(card => (
-            <Card key={card.id} name={card.name} image={card.image} />
+          {cards.map((card) => (
+            <Card
+              key={card.id}
+              name={card.name}
+              image={card.image}
+              className={showModal ? "disabled" : null}
+              onClick={setShow}
+              stateValue={setShow}
+            />
           ))}
         </div>
-    </div>
-        </section>
-  )
+        </div>
+      )}
+      
+    </section>
+  );
 }
